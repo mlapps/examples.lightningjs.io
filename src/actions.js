@@ -29,7 +29,7 @@ const getData = (url, options) => {
 }
 
 const fetchCatalog = async () => {
-    return getData('examples/catalog.json', {responseType: 'json'});
+    return getData('./examples/catalog.json', {responseType: 'json'});
 }
 
 const fetchCodeExample = (url) => {
@@ -62,7 +62,7 @@ const onExampleClick = (el) => {
     const {category, example} = el.dataset;
     pageData.deeplink = {category, example};
     document.location.href = document.location.href.replace(document.location.hash,  `#/${category}/${example}`); 
-    fetchCodeExample(`/examples/${category}/${example}.js`);
+    fetchCodeExample(`./examples/${category}/${example}.js`);
     document.getElementsByTagName('nav')[0].classList.toggle('show', false);
 }
 
@@ -180,7 +180,7 @@ window.onload = (event) => {
             const deeplink = {category, example};
             updatePageData({deeplink, catalog});
             initNav(catalog, deeplink);
-            fetchCodeExample(`/examples/${category}/${example}.js`);
+            fetchCodeExample(`./examples/${category}/${example}.js`);
         });
 };
 
