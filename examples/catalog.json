@@ -1,0 +1,71 @@
+{
+    "basics": {
+        "hello-world": {
+            "label": "Hello World"
+        },
+        "rectangle": {
+            "label": "Rectangle"
+        },
+        "image": {
+            "label": "Image"
+        },
+        "button": {
+            "label": "Button"
+        },
+        "handling-focus": {
+            "label": "Handling Focus"
+        }
+    },
+    "advanced": {
+        "button": {
+            "label": "Button"
+        },
+        "tile": {
+            "label": "Tile"
+        },
+        "menu": {
+            "label": "Menu"
+        },
+        "top-bar-menu": {
+            "label": "Top Bar Menu"
+        },
+        "slider": {
+            "label": "Slider"
+        }
+    },
+    "shaders": {
+        "rounded-rectangle": {
+            "label": "Rounded Rectangle"
+        },
+        "outline": {
+            "label": "Outline"
+        },
+        "pixelate": {
+            "label": "Pixelate"
+        },
+        "hole-punch": {
+            "label": "Hole Punch"
+        },
+        "inversion": {
+            "label": "Inversion"
+        },
+        "radial-gradient": {
+            "label": "Radial Gradient"
+        },
+        "fade-out": {
+            "label": "Fade Out"
+        },
+        "vignette": {
+            "label": "Vignette"
+        },
+        "linear-blur": {
+            "label": "Linear Blur"
+        },
+        "light-3d": {
+            "label": "Light 3D"
+        },
+        "perspective": {
+            "label": "Perspective"
+        }
+    }
+}

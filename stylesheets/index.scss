@@ -1,0 +1,436 @@
+$header-color: #090514;
+$background: #161521;
+$module-color: #201d2d;
+$border-color: #3b3a4f;
+$label-color: #c6c6cc;
+$label-focus: #fafafb;
+$focus-color: #763ffc;
+
+html {
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-left: 1px solid $border-color;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $border-color;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: $background;
+}
+
+main.demo-has-focus {
+    overflow: hidden;
+}
+
+header {
+    display: block;
+    position: fixed;
+    background-color: $header-color;
+    width: 100%;
+    height: 70px;
+    overflow: auto;
+    z-index: 10;
+}
+
+header-logo {
+    display: block;
+    float: left;
+    margin: 18px 24px;
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/logo.svg);
+}
+
+header-label {
+    float: left;
+    margin-top: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+    color: $label-focus;
+}
+
+header-menu-toggle {
+    display: none;
+    float: right;
+    width: 70px;
+    height: 70px;
+    .icon {
+        margin: 21px 24px;
+        width: 28px;
+        height: 28px;
+        background-image: url(../images/menu.svg);
+    }
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    display: block;
+    top: 70px;
+    position: fixed;
+    background-color: $module-color;
+    width: 280px;
+    height: 100%;
+    overflow: auto;
+    border-right: 2px solid $border-color;
+    z-index: 2;
+}
+
+nav .examples {
+    max-height: 44px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    width: 100%;
+    .category {
+        height: 32px;
+        font-size: 16px;
+        text-transform: uppercase;
+        padding: 12px 20px 0;
+        cursor: pointer;
+        color: $label-color;
+        display: block;
+        :after {
+            content: '\002B';
+            font-weight: bold;
+            float: right;
+        }
+        .active:after {
+            content: '\2212';
+        }
+    }
+
+    .category:after {
+        content: '\002B';
+        font-weight: bold;
+        float: right;
+    }
+
+    .example-link {
+        color: $label-color;
+        display: block;
+        height: 32px;
+        font-size: 16px;
+        line-height: 16px;
+        cursor: pointer;
+        padding: 12px 20px 0;
+    }
+
+    .example-link.selected {
+        color: $focus-color;
+    }
+}
+
+nav .examples.active {
+    max-height: fit-content;
+    .category:after {
+        content: '\2212';
+    }
+}
+
+main {
+    position: fixed;
+    top: 70px;
+    left: 280px;
+    width: calc(100% - 280px);
+    height: calc(100% - 70px);
+    overflow: auto;
+}
+
+main .example-label {
+    margin: 20px 80px;
+    color: $label-color;
+    font-size: 32px;
+}
+
+main .demo-frame {
+    margin: 20px 80px;
+    border-radius: 7px;
+    max-width: 960px;
+    resize: horizontal;
+    background: $module-color url(../images/view.jpg) 10px;
+    border: 2px solid $border-color;
+}
+
+main .demo-frame .frame-sizer {
+    position: relative;
+	width: 100%;
+    padding-bottom: 56.25%;
+}
+
+main .demo-frame .frame-sizer iframe {
+    position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.demo-instructions {
+    position: absolute;
+    left: 0;
+	top: 0;
+    width: 100%;
+	height: 100%;
+    overflow: auto;
+    opacity: 0.8;
+    background-color: $header-color;
+    z-index: 2;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.demo-instructions.show {
+    display: flex;
+}
+
+.demo-instructions p {
+    margin: 10px;
+    color: white;
+    text-align: center;
+}
+
+main .code-controls {
+    margin: 40px 80px;
+    max-width: 960px;
+    overflow: auto;
+}
+
+main .code-controls .button {
+    display: block;
+    float: left;
+    border: 2px solid $border-color;
+    color: $label-color;
+    border-radius: 7px;
+    background-color: $module-color;
+    padding: 16px 20px;
+    margin-right: 32px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    .icon {
+        float: left;
+        width: 20px;
+        height: 20px;
+        background-color: $label-color;
+    }
+    .label {
+        padding-left: 12px;
+        float: left;
+    }
+}
+
+main .button.run .icon {
+    mask: url(../images/run.svg) no-repeat center / contain;
+    -webkit-mask: url(../images/run.svg) no-repeat center / contain;
+}
+
+main .button.reset .icon {
+    mask: url(../images/reset.svg) no-repeat center / contain;
+    -webkit-mask: url(../images/reset.svg) no-repeat center / contain;
+}
+
+main .button.info .icon {
+    mask: url(../images/info.svg) no-repeat center / contain;
+    -webkit-mask: url(../images/info.svg) no-repeat center / contain;
+}
+
+
+main .code-controls .button.info{
+    float: right;
+    margin-right: 0px;
+}
+
+body.demo-mode {
+    position:fixed;
+    overflow:hidden;
+}
+
+main .code-frame {
+    margin: 40px 80px;
+    max-width: 960px;
+    height: auto;
+    overflow: auto;
+    border: 2px solid $border-color;
+    border-radius: 7px;
+    .code-header {
+        height: 45px;
+        font-size: 24px;
+        padding: 12px 20px 0;
+        background-color: $module-color;
+        border-bottom: 2px solid $border-color;
+        color: $label-color;
+    }
+
+    #code-sample {
+        width: 100%;
+        max-width: 960px;
+        margin-top: 75px;
+        height: auto;
+        textarea {
+            background: 0 0;
+            border: 0;
+            resize: none;
+            height: 0;
+            overflow: hidden
+        }
+    }
+}
+
+main .code-frame .CodeMirror {
+	background: $module-color url(../images/lines.jpg) 0 5px;
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: .05em;
+	color: $label-color;
+	height: auto
+}
+
+main .code-frame .CodeMirror .cm-atom,
+main .code-frame .CodeMirror .cm-keyword,
+main .code-frame .CodeMirror .cm-string,
+main .code-frame .CodeMirror .cm-variable-2 {
+	color: #ac8afd
+}
+
+main .code-frame .CodeMirror .cm-def {
+    color: #8aa3fd
+}
+main .code-frame .CodeMirror .cm-number {
+	color: #e58afd
+}
+
+main .code-frame .CodeMirror .cm-comment {
+	color: #919bac
+}
+
+main .code-frame .CodeMirror pre {
+	padding: 0 4px 0 14px
+}
+
+main .code-frame .CodeMirror pre {
+	padding: 0 4px 0 14px
+}
+
+main .code-frame .CodeMirror-gutters {
+	background: $module-color;
+	border-right: 1px solid $border-color
+}
+
+main .code-frame .CodeMirror-linenumber {
+	font-family: Lato, sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #7b7b7c
+}
+
+main .code-frame .CodeMirror-scroll {   
+	height: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+
+main .code-frame .CodeMirror-hscrollbar {
+    border-top: 1px solid $border-color;
+	height: 10px;
+}
+
+main .code-frame .CodeMirror-cursor{
+    background-color: $focus-color;
+    width: 2px;
+}
+
+main .code-frame .CodeMirror-selected { background: #12013c; }
+
+main .demo-frame .loader-frame{
+    display: none;
+}
+
+main .demo-frame .loader-frame.show{
+    display: block;
+}
+
+@media(hover: hover) and (pointer: fine) {
+    header-menu-toggle:hover {
+        background-color: #763ffc;
+    }
+    
+    nav .examples {
+        .category:hover, .example-link:hover {
+            background-color: #763ffc;
+            color: $label-focus;
+        }
+    }
+
+    main .code-controls .button:hover {
+        background-color: #763ffc;
+        color: $label-focus;
+        border: 2px solid $focus-color;
+        .icon {
+            background-color: $label-focus;
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    nav {
+        width: 100%;
+        border: 0px solid white;
+    }
+    main .code-controls .button {
+        float: left !important;
+        margin: 0px 10px;
+        .label {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    nav {
+        display: none;
+    }
+
+    nav.show {
+        display: block;
+    }
+
+    header-menu-toggle {
+        display: block;
+    }
+
+    main {
+        left: 0px;
+        width: 100%;
+        .example-label {
+            margin: 10px 10px;
+            font-size: 22px;
+        }
+        .demo-frame {
+            margin: 20px 10px;
+        }
+        .code-controls {
+            margin: 20px 10px;
+        }
+        .code-frame {
+            margin: 20px 10px;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LightningJS Examples</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+        <link rel="stylesheet" href="./stylesheets/index.css">
+        <link rel="icon" href="./images/logo.svg">
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    </head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <body>
+        <script src="./src/actions.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+            <header>
+                <header-logo></header-logo>
+                <header-label>LightningJS</header-label>
+                <header-menu-toggle onclick="onToggleMenu()">
+                    <div class="icon"></div>
+                </header-menu-toggle>
+            </header>
+            <nav></nav>
+            <main>
+                <div class="example-label">Loading example</div>
+                <div class="demo-frame">
+                    <div class="frame-sizer">
+                        <iframe id="demo" src="about:blank"  onfocus="onControlDemo()"></iframe>
+                        <div class="demo-instructions" onclick="focusDemoContent()">
+                            <p>Click inside this demo frame and take control with your keyboard!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-controls">
+                    <div class="button run" onclick="onRunCode()">
+                        <div class="icon"></div>
+                        <div class="label">Run Code</div>
+                    </div>
+                    <div class="button reset" onclick="onResetCode()">
+                        <div class="icon"></div>
+                        <div class="label">Reset Code</div>
+                    </div>
+                    <div class="button info" onclick="onInfoClick()">
+                        <div class="icon"></div>
+                        <div class="label">Info</div>
+                    </div>
+                </div>
+                <div class="code-frame">
+                    <div class="code-header">Example code</div>
+                    <textarea id="code-sample"></textarea>
+                </div>
+            </main>
+    </body>
+</html>
