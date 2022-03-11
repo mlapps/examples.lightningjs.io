@@ -185,6 +185,11 @@ window.onload = (event) => {
 };
 
 window.addEventListener('hashchange', function(){
-    document.getElementsByClassName('example-link selected')[0].classList.toggle('selected', false);
-    pageData.exampleLink.classList.toggle('selected', true);
+    const currentSelected = document.getElementsByClassName('example-link selected')[0];
+    if(currentSelected) {
+        currentSelected.classList.toggle('selected', false);
+    }
+    if(pageData.exampleLink) {
+        pageData.exampleLink.classList.toggle('selected', true);
+    }
 })
