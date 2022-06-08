@@ -53,24 +53,6 @@ class ExampleApp extends Lightning.Application {
                 y: 480,
                 w: SIZE,
                 h: SIZE,
-                rect: true,
-                colorLeft: 0xff00ff00,
-                colorRight: 0xffff0000,
-                shader: {type: Lightning.shaders.Hole, w: 100, h: 75, x: 40, y: 20, radius: [10, 20]}
-            },
-            HolePunch7: {
-                x: 870,
-                y: 480,
-                w: SIZE,
-                h: SIZE,
-                rect: true,
-                shader: {type: Lightning.shaders.Hole, w: 75, h: 100, x: 140, y: 120, radius: [10, 20, 30]}
-            },
-            HolePunch8: {
-                x: 1260,
-                y: 480,
-                w: SIZE,
-                h: SIZE,
                 src: SRC,
                 shader: {type: Lightning.shaders.Hole, topLeft: 40,  w: 75, h: 100, x: 140, y: 120}
             },
@@ -80,8 +62,8 @@ class ExampleApp extends Lightning.Application {
     _init() {
         this._animationDemo = this.animation({duration: 2, repeat: -1, actions: [
                 {p: 'color', v: {0: 0xff000000, 0.5: 0xff888888, 1: 0xff000000}},
-                {t: 'HolePunch8', p: 'shader.x', v: {0: 140, 0.5: 40, 1: 140}},
-                {t: 'HolePunch8', p: 'shader.y', v: {0: 120, 0.5: 20, 1: 120}    }
+                {t: 'HolePunch6', p: 'shader.x', v: {0: 140, 0.5: 40, 1: 140}},
+                {t: 'HolePunch6', p: 'shader.y', v: {0: 120, 0.5: 20, 1: 120}    }
             ]});
     }
 
